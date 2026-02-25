@@ -251,12 +251,9 @@
 
   <!-- Footer -->
   <footer class="py-8 px-6 border-t border-[var(--border)] bg-[var(--bg)]">
-    <div class="max-w-5xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4 text-sm text-[var(--fg-muted)]">
+    <div class="max-w-5xl mx-auto flex flex-col sm:flex-row items-center justify-center gap-4 text-sm text-[var(--fg-muted)]">
       <div class="font-mono text-xs">
-        © 2026 Nino Mark Zaspa. All rights reserved.
-      </div>
-      <div class="text-xs">
-        Designed & Built with <span class="text-[var(--accent)]">❤</span>
+        © <span id="year"></span> Nino Mark Zaspa. All rights reserved.
       </div>
     </div>
   </footer>
@@ -492,10 +489,19 @@
       });
     });
 
+    // Set copyright year
+    function updateCopyrightYear() {
+      const yearElement = document.getElementById('year');
+      if (yearElement) {
+        yearElement.textContent = new Date().getFullYear();
+      }
+    }
+
     // Initialize
     renderSkills('frontend');
     renderProjects();
     observeElements();
+    updateCopyrightYear();
   </script>
 </body>
 </html>
