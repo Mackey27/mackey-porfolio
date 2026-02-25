@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Nino Mark Zaspa | Junior Web Developer</title>
+  <title>Nino Mark Zaspa</title>
   <link rel="stylesheet" href="output.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -15,7 +15,6 @@
   <nav class="fixed top-0 left-0 right-0 z-50 bg-[rgba(252,252,252,0.8)] backdrop-blur-md border-b border-[var(--border)]">
     <div class="max-w-5xl mx-auto px-6 py-4 flex items-center justify-between">
       <a href="#" class="font-mono text-lg font-bold tracking-tight flex items-center gap-3">
-        <span>mac_k3yyy<span class="text-[var(--accent)]"></span></span>
       </a>
       <div class="hidden md:flex items-center gap-8">
         <a href="#about" class="nav-link text-sm text-[var(--fg-muted)]">About</a>
@@ -23,7 +22,11 @@
         <a href="#projects" class="nav-link text-sm text-[var(--fg-muted)]">Projects</a>
         <a href="#contact" class="nav-link text-sm text-[var(--fg-muted)]">Contact</a>
       </div>
-      <a href="#contact" class="btn-primary text-xs py-2 px-4">Hire Me</a>
+      <button id="menu-toggle" class="md:hidden w-10 h-10 flex flex-col items-center justify-center gap-1.5">
+        <span class="block w-6 h-0.5 bg-[var(--fg)] transition-all duration-300"></span>
+        <span class="block w-6 h-0.5 bg-[var(--fg)] transition-all duration-300"></span>
+        <span class="block w-6 h-0.5 bg-[var(--fg)] transition-all duration-300"></span>
+      </button>
     </div>
   </nav>
 
@@ -40,8 +43,8 @@
             </span>
           </div>
           <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight tracking-tight reveal reveal-delay-1">
-            Nino Mark<br>
-            <span class="text-[var(--accent)]">Zaspa</span>
+            HELLO, I'M<br>
+            <span class="text-[var(--accent)]">MACKEY</span>
           </h1>
           <p class="text-lg text-[var(--fg-muted)] max-w-md leading-relaxed reveal reveal-delay-2">
             I build clean, functional web applications with modern technologies. Focused on simplicity and user experience.
@@ -60,13 +63,13 @@
               <div class="w-3 h-3 rounded-full bg-[#ff5f57]"></div>
               <div class="w-3 h-3 rounded-full bg-[#febc2e]"></div>
               <div class="w-3 h-3 rounded-full bg-[#28c840]"></div>
-              <span class="ml-4 text-xs text-[#8b8b8b] font-mono">mack3yyy.dev</span>
+              <span class="ml-4 text-xs text-[#8b8b8b] font-mono">mackey.dev</span>
             </div>
             <!-- Code content -->
             <div class="p-5 font-mono text-xs sm:text-sm leading-7 text-[#d4d4d4]">
               <div><span class="text-[#569cd6]">&lt;?php</span></div>
               <div><span class="text-[#9cdcfe]">$dev</span> <span class="text-[#d4d4d4]">=</span> <span class="text-[#c586c0]">new</span> <span class="text-[#4ec9b0]">Developer</span>([</div>
-              <div class="pl-4"><span class="text-[#9cdcfe]">'name'</span> <span class="text-[#d4d4d4]">=></span> <span class="text-[#ce9178]">'Nino Mark Zaspa'</span>,</div>
+              <div class="pl-4"><span class="text-[#9cdcfe]">'name'</span> <span class="text-[#d4d4d4]">=></span> <span class="text-[#ce9178]">'Niño Mark Zaspa'</span>,</div>
               <div class="pl-4"><span class="text-[#9cdcfe]">'stack'</span> <span class="text-[#d4d4d4]">=></span> <span class="text-[#ce9178]">'Laravel, JS, PHP'</span>,</div>
               <div class="pl-4"><span class="text-[#9cdcfe]">'location'</span> <span class="text-[#d4d4d4]">=></span> <span class="text-[#ce9178]">'Santa Fe Cebu'</span></div>
               <div><span class="text-[#d4d4d4]">]);</span></div>
@@ -98,8 +101,9 @@
               src="mackey-logo.jpg" 
               alt="Mackey logo" 
               class="w-full h-full object-cover bg-white"
-              
             >
+                    <h2 class="text-3xl font-bold mt-4 tracking-tight">Projects</h2>
+
           </div>
         </div>
       </div>
