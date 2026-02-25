@@ -1,0 +1,17 @@
+{
+  "name": "mackey-portfolio",
+  "version": "1.0.0",
+  "description": "Nino Mark Zaspa - Junior Web Developer Portfolio",
+  "scripts": {
+    "dev": "tailwindcss -i ./src/input.css -o ./output.css --watch",
+    "build": "tailwindcss -i ./src/input.css -o ./output.css --minify"
+  },
+  "keywords": ["portfolio", "developer", "tailwind"],
+  "author": "Nino Mark Zaspa",
+  "license": "MIT",
+  "devDependencies": {
+    "tailwindcss": "^3.4.1",
+    "postcss": "^8.4.32",
+    "autoprefixer": "^10.4.16"
+  }
+}
