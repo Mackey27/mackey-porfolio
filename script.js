@@ -68,7 +68,7 @@ const projectsData = [
   {
     title: 'Barangay Management',
     description: 'Comprehensive system for barangay administration, permits, and resident services management.',
-    tags: ['Laravel', 'MySQL', 'Bootstrap'],
+    tags: ['PHP', 'MySQL', 'Bootstrap'],
     color: '#4f46e5',
     link: '#'
   }
@@ -195,27 +195,30 @@ function observeElements() {
   document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
 }
 
-// Contact form
-document.getElementById('contact-form').addEventListener('submit', function(e) {
-  e.preventDefault();
-  const btn = this.querySelector('button[type="submit"]');
-  const originalText = btn.textContent;
+// Contact form (optional section on some variants)
+const contactForm = document.getElementById('contact-form');
+if (contactForm) {
+  contactForm.addEventListener('submit', function(e) {
+    e.preventDefault();
+    const btn = this.querySelector('button[type="submit"]');
+    const originalText = btn.textContent;
 
-  btn.textContent = 'Sending...';
-  btn.disabled = true;
-
-  setTimeout(() => {
-    btn.textContent = 'Message Sent';
-    btn.style.background = 'var(--accent)';
+    btn.textContent = 'Sending...';
+    btn.disabled = true;
 
     setTimeout(() => {
-      btn.textContent = originalText;
-      btn.style.background = '';
-      btn.disabled = false;
-      this.reset();
-    }, 2000);
-  }, 1500);
-});
+      btn.textContent = 'Message Sent';
+      btn.style.background = 'var(--accent)';
+
+      setTimeout(() => {
+        btn.textContent = originalText;
+        btn.style.background = '';
+        btn.disabled = false;
+        this.reset();
+      }, 2000);
+    }, 1500);
+  });
+}
 
 // Smooth scroll
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
