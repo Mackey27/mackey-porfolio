@@ -1,0 +1,13 @@
+{
+  "css.lint.vendorPrefix": "ignore",
+  "css.lint.propertyIgnoredDueToDisplay": "ignore",
+  "json.schemas": [
+    {
+      "fileMatch": [
+        "/package.json",
+        "package.json"
+      ],
+      "url": "./.vscode/schemas/package.schema.json"
+    }
+  ]
+}

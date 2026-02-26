@@ -1,0 +1,51 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "tailwind:watch",
+      "type": "npm",
+      "script": "dev",
+      "isBackground": true,
+      "problemMatcher": "$npm-watch",
+      "presentation": {
+        "reveal": "always",
+        "panel": "dedicated"
+      }
+    },
+    {
+      "label": "php:serve",
+      "type": "shell",
+      "command": "php",
+      "args": [
+        "-S",
+        "localhost:8080",
+        "-t",
+        "${workspaceFolder}"
+      ],
+      "isBackground": true,
+      "problemMatcher": {
+        "owner": "php-server",
+        "pattern": {
+          "regexp": ".+"
+        },
+        "background": {
+          "activeOnStart": true,
+          "beginsPattern": "Development Server",
+          "endsPattern": "Development Server"
+        }
+      },
+      "presentation": {
+        "reveal": "always",
+        "panel": "dedicated"
+      }
+    },
+    {
+      "label": "dev:serve+watch",
+      "dependsOrder": "parallel",
+      "dependsOn": [
+        "php:serve",
+        "tailwind:watch"
+      ]
+    }
+  ]
+}

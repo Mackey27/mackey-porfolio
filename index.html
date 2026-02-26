@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Nino Mark Zaspa</title>
+  <title>Nino Mark Zaspa | Portfolio</title>
   <link rel="stylesheet" href="output.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -158,6 +158,40 @@
         <div id="projects-dots" class="mt-5 flex items-center justify-center gap-2">
           <!-- Pagination dots rendered via JS -->
         </div>
+
+        <div class="mt-12 reveal">
+          <div class="flex items-center justify-between gap-3 mb-4">
+            <h3 class="text-xl font-bold tracking-tight">Gallery</h3>
+          </div>
+
+          <div class="gallery-shell">
+            <button
+              id="nav-prev"
+              type="button"
+              aria-label="Previous gallery image"
+              class="gallery-nav gallery-nav-prev"
+            >
+              <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M15 18l-6-6 6-6"/>
+              </svg>
+            </button>
+
+            <div id="gallery-track" class="gallery-track">
+              <!-- Gallery items rendered via JS -->
+            </div>
+
+            <button
+              id="nav-next"
+              type="button"
+              aria-label="Next gallery image"
+              class="gallery-nav gallery-nav-next"
+            >
+              <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M9 18l6-6-6-6"/>
+              </svg>
+            </button>
+          </div>
+        </div>
       </div>
     </div>
   </section>
@@ -264,13 +298,14 @@
         { name: 'HTML5', icon: 'html' },
         { name: 'CSS3', icon: 'css' },
         { name: 'JavaScript', icon: 'js' },
+        { name: 'Vite', icon: 'vite' },
         { name: 'Tailwind', icon: 'tailwind' },
         { name: 'Bootstrap', icon: 'bootstrap' },
       ],
       backend: [
         { name: 'PHP', icon: 'php' },
         { name: 'Laravel', icon: 'laravel' },
-        { name: 'REST API', icon: 'api' },
+        { name: 'REST', icon: 'api' },
         { name: 'MySQL', icon: 'mysql' },
       ],
       tools: [
@@ -289,6 +324,7 @@
       html: `<svg class="w-8 h-8" viewBox="0 0 24 24" fill="currentColor"><path d="M1.5 0h21l-1.91 21.563L11.977 24l-8.564-2.438L1.5 0zm7.031 9.75l-.232-2.718 10.059.003.23-2.622L5.412 4.41l.698 8.01h9.126l-.326 3.426-2.91.804-2.955-.81-.188-2.11H6.248l.33 4.171L12 19.351l5.379-1.443.744-8.157H8.531z"/></svg>`,
       css: `<svg class="w-8 h-8" viewBox="0 0 24 24" fill="currentColor"><path d="M1.5 0h21l-1.91 21.563L11.977 24l-8.565-2.438L1.5 0zm17.09 4.413L5.41 4.41l.213 2.622 10.125.002-.255 2.716h-6.64l.24 2.573h6.182l-.366 3.523-2.91.804-2.956-.81-.188-2.11h-2.61l.29 3.855L12 19.288l5.373-1.53L18.59 4.414z"/></svg>`,
       js: `<svg class="w-8 h-8" viewBox="0 0 24 24" fill="currentColor"><path d="M0 0h24v24H0V0zm22.034 18.276c-.175-1.095-.888-2.015-3.003-2.873-.736-.345-1.554-.585-1.797-1.14-.091-.33-.105-.51-.046-.705.15-.646.915-.84 1.515-.66.39.12.75.42.976.9 1.034-.676 1.034-.676 1.755-1.125-.27-.42-.404-.601-.586-.78-.63-.705-1.469-1.065-2.834-1.034l-.705.089c-.676.165-1.32.525-1.71 1.005-1.14 1.291-.811 3.541.569 4.471 1.365 1.02 3.361 1.244 3.616 2.205.24 1.17-.87 1.545-1.966 1.41-.811-.18-1.26-.586-1.755-1.336l-1.83 1.051c.21.48.45.689.81 1.109 1.74 1.756 6.09 1.666 6.871-1.004.029-.09.24-.705.074-1.65l.046.067zm-8.983-7.245h-2.248c0 1.938-.009 3.864-.009 5.805 0 1.232.063 2.363-.138 2.711-.33.689-1.18.601-1.566.48-.396-.196-.597-.466-.83-.855-.063-.105-.11-.196-.127-.196l-1.825 1.125c.305.63.75 1.172 1.324 1.517.855.51 2.004.675 3.207.405.783-.226 1.458-.691 1.811-1.411.51-.93.402-2.07.397-3.346.012-2.054 0-4.109 0-6.179l.004-.056z"/></svg>`,
+      vite: `<svg class="w-8 h-8" viewBox="0 0 24 24" fill="currentColor"><path d="M23.5 3.2L12.5 23.3a.9.9 0 0 1-1.6 0L.5 3.2a.9.9 0 0 1 .9-1.3l10.6 1.9a.9.9 0 0 0 .3 0l10.3-1.9a.9.9 0 0 1 .9 1.3zM12 7.1L8.9 13h2.4l-1 3.8 4.7-7.1h-2.5L14 7.1H12z"/></svg>`,
       tailwind: `<svg class="w-8 h-8" viewBox="0 0 24 24" fill="currentColor"><path d="M12.001,4.8c-3.2,0-5.2,1.6-6,4.8c1.2-1.6,2.6-2.2,4.2-1.8c0.913,0.228,1.565,0.89,2.288,1.624 C13.666,10.618,15.027,12,18.001,12c3.2,0,5.2-1.6,6-4.8c-1.2,1.6-2.6,2.2-4.2,1.8c-0.913-0.228-1.565-0.89-2.288-1.624 C16.337,6.182,14.976,4.8,12.001,4.8z M6.001,12c-3.2,0-5.2,1.6-6,4.8c1.2-1.6,2.6-2.2,4.2-1.8c0.913,0.228,1.565,0.89,2.288,1.624 c1.177,1.194,2.538,2.576,5.512,2.576c3.2,0,5.2-1.6,6-4.8c-1.2,1.6-2.6,2.2-4.2,1.8c-0.913-0.228-1.565-0.89-2.288-1.624 C10.337,13.382,8.976,12,6.001,12z"/></svg>`,
       bootstrap: `<svg class="w-8 h-8" viewBox="0 0 24 24" fill="currentColor"><path d="M11.77 11.24H9.956V8.202h2.152c1.17 0 1.834.528 1.834 1.488 0 .988-.7 1.55-2.172 1.55zm4.452-3.504c-.432-.72-1.084-1.26-1.944-1.632-.804-.36-1.74-.54-2.808-.54H6.72v12.144h3.228v-3.816h1.488c1.068 0 2.004-.18 2.808-.54.864-.372 1.512-.912 1.944-1.632.432-.72.648-1.56.648-2.52 0-.96-.216-1.8-.648-2.52-.432-.72-1.084-1.26-1.944-1.632-.804-.36-1.74-.54-2.808-.54H9.956v2.916h1.814c1.472 0 2.172.562 2.172 1.55 0 .96-.664 1.488-1.834 1.488H9.956v.036h2.152c1.068 0 2.004-.18 2.808-.54.864-.372 1.512-.912 1.944-1.632.432-.72.648-1.56.648-2.52 0-.96-.216-1.8-.648-2.52z"/></svg>`,
       php: `<svg class="w-8 h-8" viewBox="0 0 24 24" fill="currentColor"><path d="M7.01 10.207h-.944l-.515 2.648h.838c.556 0 .97-.105 1.242-.314.272-.21.455-.559.55-1.049.092-.47.05-.802-.124-.995-.175-.193-.523-.29-1.047-.29zM12 5.688C5.373 5.688 0 8.514 0 12s5.373 6.313 12 6.313S24 15.486 24 12c0-3.486-5.373-6.312-12-6.312zm-3.26 7.451c-.261.25-.575.438-.917.551-.336.108-.765.164-1.285.164H5.357l-.327 1.681H3.652l1.23-6.326h2.65c.797 0 1.378.209 1.744.628.366.418.476 1.002.33 1.752a2.836 2.836 0 0 1-.305.847c-.143.255-.33.49-.561.703zm4.024.715l.543-2.799c.063-.318.039-.536-.068-.651-.107-.116-.336-.174-.687-.174H11.46l-.704 3.625H9.388l1.23-6.327h1.367l-.327 1.682h1.218c.767 0 1.295.134 1.586.401s.378.7.263 1.299l-.572 2.944h-1.389zm7.597-2.265a2.782 2.782 0 0 1-.305.847c-.143.255-.33.49-.561.703a2.44 2.44 0 0 1-.917.551c-.336.108-.765.164-1.286.164h-1.18l-.327 1.682h-1.378l1.23-6.326h2.649c.797 0 1.378.209 1.744.628.366.417.477 1.001.331 1.751zm-2.595-1.382h-.943l-.516 2.648h.838c.557 0 .971-.105 1.242-.314.272-.21.455-.559.551-1.049.092-.47.049-.802-.125-.995s-.523-.29-1.047-.29z"/></svg>`,
@@ -333,6 +369,15 @@
         link: '#'
       }
     ];
+
+    const galleryData = Array.from({ length: 14 }, (_, index) => {
+      const imageNumber = index + 1;
+      return {
+        src: `images/image-${imageNumber}.jpg`,
+        alt: `Gallery image ${imageNumber}`,
+        title: `Gallery ${imageNumber}`
+      };
+    });
 
     // Render functions
     function renderSkills(category) {
@@ -387,6 +432,31 @@
 
       // Setup slider
       setupSlider();
+    }
+
+    function renderGallery() {
+      const track = document.getElementById('gallery-track');
+      const prevBtn = document.getElementById('nav-prev') || document.getElementById('gallery-prev');
+      const nextBtn = document.getElementById('nav-next') || document.getElementById('gallery-next');
+
+      if (!track || !prevBtn || !nextBtn) return;
+
+      track.innerHTML = galleryData.map(item => `
+        <article class="gallery-card reveal">
+          <img src="${item.src}" alt="${item.alt}" class="gallery-image" loading="lazy">
+          <p class="gallery-caption">${item.title}</p>
+        </article>
+      `).join('');
+
+      const step = () => Math.max(track.clientWidth * 0.82, 240);
+
+      prevBtn.addEventListener('click', () => {
+        track.scrollBy({ left: -step(), behavior: 'smooth' });
+      });
+
+      nextBtn.addEventListener('click', () => {
+        track.scrollBy({ left: step(), behavior: 'smooth' });
+      });
     }
 
     // Slider state
@@ -764,6 +834,7 @@
     // Initialize
     renderSkills('frontend');
     renderProjects();
+    renderGallery();
     observeElements();
     initFloatingAssistant();
     updateCopyrightYear();
