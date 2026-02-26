@@ -230,20 +230,6 @@ body {
   to { transform: rotate(360deg); }
 }
 
-/* Mobile Menu Animation */
-#mobile-menu {
-  max-height: 500px;
-  overflow: hidden;
-  transition: max-height 0.3s ease-out, opacity 0.3s ease-out;
-  opacity: 1;
-}
-
-#mobile-menu.hidden {
-  max-height: 0;
-  opacity: 0;
-  pointer-events: none;
-}
-
 @keyframes slideDown {
   from {
     opacity: 0;
