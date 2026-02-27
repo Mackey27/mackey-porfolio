@@ -7,11 +7,48 @@
   <link rel="stylesheet" href="output.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="icon" alt="logo" href="nmz-logo.png">
+  <link rel="icon" alt="logo" href="nmz.png">
   <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;700&family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+  <header class="site-header">
+    <div class="site-header-inner max-w-5xl mx-auto px-6">
+      <img src="nmz.png" alt="Mackey logo" class="w-10 h-10 mr-3">
+
+      <nav class="desktop-menu" aria-label="Primary">
+        <a href="#about" class="nav-link font-mono">About</a>
+        <a href="#skills" class="nav-link font-mono">Skills</a>
+        <a href="#projects" class="nav-link font-mono">Projects</a>
+        <a href="#contact" class="nav-link font-mono">Contact</a>
+      </nav>
+
+      <div class="header-actions">
+        <a href="#contact" class="hire-me-link font-mono">Hire Me</a>
+        <button
+          id="menu-toggle"
+          type="button"
+          class="menu-toggle"
+          aria-label="Open menu"
+          aria-controls="mobile-menu"
+          aria-expanded="false"
+        >
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </div>
+
+    <nav id="mobile-menu" class="mobile-menu" aria-label="Mobile">
+      <a href="#about" class="mobile-nav-link">About</a>
+      <a href="#skills" class="mobile-nav-link">Skills</a>
+      <a href="#projects" class="mobile-nav-link">Projects</a>
+      <a href="#contact" class="mobile-nav-link">Contact</a>
+      <a href="#contact" class="mobile-nav-link mobile-hire-link">Hire Me</a>
+    </nav>
+  </header>
+
   <!-- Hero Section -->
   <section class="min-h-screen flex items-center justify-center px-6">
     <div class="max-w-5xl w-full">
@@ -24,8 +61,9 @@
               // Available for hire
             </span>
           </div>
-          <h1 class="text-4xl sm:text-5xl lg:text-7xl font-bold leading-tight tracking-tight reveal reveal-delay-1">
-            HELLO, I'M <span class="text-[var(--accent)]">MACKEY</span>
+          <h1 class="hero-title reveal reveal-delay-1">
+            <span class="hero-intro">HELLO, I'M</span>
+            <span class="hero-name">MACKEY</span>
           </h1>
           <p class="text-lg text-[var(--fg-muted)] max-w-md leading-relaxed reveal reveal-delay-2">
             I build clean, functional web applications with modern technologies. Focused on simplicity and user experience.
@@ -51,8 +89,7 @@
               <div><span class="text-[#569cd6]">&lt;?php</span></div>
               <div><span class="text-[#9cdcfe]">$dev</span> <span class="text-[#d4d4d4]">=</span> <span class="text-[#c586c0]">new</span> <span class="text-[#4ec9b0]">Developer</span>([</div>
               <div class="pl-4"><span class="text-[#9cdcfe]">'name'</span> <span class="text-[#d4d4d4]">=></span> <span class="text-[#ce9178]">'Niño Mark Zaspa'</span>,</div>
-              <div class="pl-4"><span class="text-[#9cdcfe]">'phone'</span> <span class="text-[#d4d4d4]">=></span> <span class="text-[#ce9178]">'09095765767'</span>,</div>
-              <div class="pl-4"><span class="text-[#9cdcfe]">'address'</span> <span class="text-[#d4d4d4]">=></span> <span class="text-[#ce9178]">'Santa Fe, Cebu'</span></div>
+              <div class="pl-4"><span class="text-[#9cdcfe]">'address'</span> <span class="text-[#d4d4d4]">=></span> <span class="text-[#ce9178]">'Santa Fe, Cebu, Philippines'</span></div>
               <div class="pl-4"><span class="text-[#9cdcfe]">'stack'</span> <span class="text-[#d4d4d4]">=></span> <span class="text-[#ce9178]">'Laravel, JS, PHP'</span>,</div>
 
               <div><span class="text-[#d4d4d4]">]);</span></div>
@@ -72,10 +109,10 @@
       <div class="grid md:grid-cols-2 gap-12 items-center">
         <div class="reveal order-2 md:order-2">
           <span class="font-mono text-sm text-[var(--accent)]">// About Me</span>
-          <p class="text-[var(--fg-muted)] leading-relaxed mb-4">
+          <p class="about-copy text-[var(--fg-muted)] leading-relaxed mb-4">
             I'm a passionate about creating web applications that solve real problems. My focus is on writing clean, efficient code and building intuitive user interfaces.
           </p>
-          <p class="text-[var(--fg-muted)] leading-relaxed">
+          <p class="about-copy text-[var(--fg-muted)] leading-relaxed">
             Currently expanding my expertise in Laravel and modern JavaScript frameworks. I believe in continuous learning and staying updated with the latest web technologies.
           </p>
         </div>
@@ -191,6 +228,10 @@
               </svg>
             </button>
           </div>
+
+          <div id="gallery-dots" class="gallery-dots" aria-label="Gallery pagination">
+            <!-- Gallery pagination dots rendered via JS -->
+          </div>
         </div>
       </div>
     </div>
@@ -223,6 +264,13 @@
           <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
             <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
             <polyline points="22,6 12,13 2,6"/>
+          </svg>
+        </a>
+        <a href="https://www.instagram.com/mac_k3yyy" class="w-10 h-10 rounded-full border border-[var(--border)] flex items-center justify-center hover:border-[var(--accent)] hover:text-[var(--accent)] transition-all" aria-label="Instagram">
+          <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="3" y="3" width="18" height="18" rx="5"></rect>
+            <circle cx="12" cy="12" r="4"></circle>
+            <circle cx="17.2" cy="6.8" r="0.8" fill="currentColor" stroke="none"></circle>
           </svg>
         </a>
       </div>
@@ -382,6 +430,30 @@
       };
     });
 
+    function ensureSvgViewBoxes() {
+      document.querySelectorAll('svg').forEach(svg => {
+        if (svg.hasAttribute('viewBox')) return;
+
+        const width = Number(svg.getAttribute('width'));
+        const height = Number(svg.getAttribute('height'));
+        if (Number.isFinite(width) && Number.isFinite(height) && width > 0 && height > 0) {
+          svg.setAttribute('viewBox', `0 0 ${width} ${height}`);
+          return;
+        }
+
+        try {
+          const box = svg.getBBox();
+          if (box.width > 0 && box.height > 0) {
+            svg.setAttribute('viewBox', `${box.x} ${box.y} ${box.width} ${box.height}`);
+          } else {
+            svg.setAttribute('viewBox', '0 0 24 24');
+          }
+        } catch (error) {
+          svg.setAttribute('viewBox', '0 0 24 24');
+        }
+      });
+    }
+
     // Render functions
     function renderSkills(category) {
       const container = document.getElementById('skills-container');
@@ -396,6 +468,7 @@
         </div>
       `).join('');
 
+      ensureSvgViewBoxes();
       observeElements();
     }
 
@@ -433,12 +506,15 @@
         ></button>
       `).join('');
 
+      ensureSvgViewBoxes();
+
       // Setup slider
       setupSlider();
     }
 
     function renderGallery() {
       const track = document.getElementById('gallery-track');
+      const dotsContainer = document.getElementById('gallery-dots');
       const prevBtn = document.getElementById('nav-prev') || document.getElementById('gallery-prev');
       const nextBtn = document.getElementById('nav-next') || document.getElementById('gallery-next');
 
@@ -447,11 +523,53 @@
       track.innerHTML = galleryData.map(item => `
         <article class="gallery-card reveal">
           <img src="${item.src}" alt="${item.alt}" class="gallery-image" loading="lazy">
-          <p class="gallery-caption">${item.title}</p>
         </article>
       `).join('');
 
       const step = () => Math.max(track.clientWidth * 0.82, 240);
+
+      const cardStep = () => {
+        const firstCard = track.querySelector('.gallery-card');
+        if (!firstCard) return step();
+        const trackStyles = getComputedStyle(track);
+        const gap = parseFloat(trackStyles.columnGap || trackStyles.gap || '0');
+        return firstCard.getBoundingClientRect().width + gap;
+      };
+
+      function setActiveDot(index) {
+        if (!dotsContainer) return;
+        dotsContainer.querySelectorAll('.gallery-page-dot').forEach((dot, dotIndex) => {
+          dot.classList.toggle('is-active', dotIndex === index);
+        });
+      }
+
+      function updateDotsFromScroll() {
+        if (!dotsContainer) return;
+        const index = Math.round(track.scrollLeft / cardStep());
+        const safeIndex = Math.max(0, Math.min(galleryData.length - 1, index));
+        setActiveDot(safeIndex);
+      }
+
+      if (dotsContainer) {
+        dotsContainer.innerHTML = galleryData.map((_, index) => `
+          <button
+            type="button"
+            class="gallery-page-dot ${index === 0 ? 'is-active' : ''}"
+            data-gallery-index="${index}"
+            aria-label="Go to gallery image ${index + 1}"
+          ></button>
+        `).join('');
+
+        dotsContainer.querySelectorAll('.gallery-page-dot').forEach(dot => {
+          dot.addEventListener('click', () => {
+            const index = Number(dot.dataset.galleryIndex || 0);
+            track.scrollTo({ left: cardStep() * index, behavior: 'smooth' });
+            setActiveDot(index);
+          });
+        });
+
+        track.addEventListener('scroll', updateDotsFromScroll, { passive: true });
+      }
 
       prevBtn.addEventListener('click', () => {
         track.scrollBy({ left: -step(), behavior: 'smooth' });
@@ -460,6 +578,8 @@
       nextBtn.addEventListener('click', () => {
         track.scrollBy({ left: step(), behavior: 'smooth' });
       });
+
+      ensureSvgViewBoxes();
     }
 
     // Slider state
@@ -550,6 +670,42 @@
             this.reset();
           }, 2000);
         }, 1500);
+      });
+    }
+
+    // Responsive nav menu
+    function initResponsiveMenu() {
+      const menuToggle = document.getElementById('menu-toggle');
+      const mobileMenu = document.getElementById('mobile-menu');
+      if (!menuToggle || !mobileMenu) return;
+
+      const bars = menuToggle.querySelectorAll('span');
+      const firstBar = bars[0];
+      const middleBar = bars[1];
+      const lastBar = bars[2];
+
+      function setMenuState(open) {
+        mobileMenu.classList.toggle('open', open);
+        menuToggle.setAttribute('aria-expanded', String(open));
+        menuToggle.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
+
+        if (firstBar) firstBar.classList.toggle('rotate-45', open);
+        if (middleBar) middleBar.classList.toggle('opacity-0', open);
+        if (lastBar) lastBar.classList.toggle('-rotate-45', open);
+      }
+
+      menuToggle.addEventListener('click', () => {
+        setMenuState(!mobileMenu.classList.contains('open'));
+      });
+
+      mobileMenu.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', () => setMenuState(false));
+      });
+
+      window.addEventListener('resize', () => {
+        if (window.innerWidth > 768) {
+          setMenuState(false);
+        }
       });
     }
 
@@ -838,6 +994,8 @@
     renderSkills('frontend');
     renderProjects();
     renderGallery();
+    ensureSvgViewBoxes();
+    initResponsiveMenu();
     observeElements();
     initFloatingAssistant();
     updateCopyrightYear();
