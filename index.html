@@ -4,6 +4,25 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Nino Mark Zaspa | Portfolio</title>
+  <script>
+    (function () {
+      const key = 'preferred-theme';
+      let theme = 'light';
+      try {
+        const saved = localStorage.getItem(key);
+        if (saved === 'light' || saved === 'dark') {
+          theme = saved;
+        } else if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+          theme = 'dark';
+        }
+      } catch (error) {
+        if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+          theme = 'dark';
+        }
+      }
+      document.documentElement.setAttribute('data-theme', theme);
+    })();
+  </script>
   <link rel="stylesheet" href="output.css">
   <link rel="icon" type="image/png" sizes="32x32" href="./nmz.png?v=2">
   <link rel="shortcut icon" href="./nmz.png?v=2">
@@ -16,8 +35,6 @@
 <body>
   <header class="site-header">
     <div class="site-header-inner max-w-5xl mx-auto px-6">
-      <img src="nmz.png" alt="Mackey logo" class="w-10 h-10 mr-3">
-
       <nav class="desktop-menu" aria-label="Primary">
         <a href="#about" class="nav-link font-mono">About</a>
         <a href="#skills" class="nav-link font-mono">Skills</a>
@@ -26,6 +43,29 @@
       </nav>
 
       <div class="header-actions">
+        <button
+          id="theme-toggle"
+          type="button"
+          class="theme-toggle font-mono"
+          aria-label="Activate dark mode"
+          aria-pressed="false"
+          data-icon="moon"
+        >
+          <svg class="theme-icon theme-icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3c0 0 0 0 0 0A7 7 0 0 0 21 12.79z"></path>
+          </svg>
+          <svg class="theme-icon theme-icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+            <circle cx="12" cy="12" r="4"></circle>
+            <path d="M12 2v2"></path>
+            <path d="M12 20v2"></path>
+            <path d="M4.93 4.93l1.41 1.41"></path>
+            <path d="M17.66 17.66l1.41 1.41"></path>
+            <path d="M2 12h2"></path>
+            <path d="M20 12h2"></path>
+            <path d="M4.93 19.07l1.41-1.41"></path>
+            <path d="M17.66 6.34l1.41-1.41"></path>
+          </svg>
+        </button>
         <a href="#contact" class="hire-me-link font-mono">Hire Me</a>
         <button
           id="menu-toggle"
@@ -133,7 +173,7 @@
   </section>
 
   <!-- Skills Section -->
-  <section id="skills" class="py-24 px-6 bg-[#f9fafb]">
+  <section id="skills" class="py-24 px-6 section-alt">
     <div class="max-w-5xl mx-auto">
       <div class="text-center mb-12 reveal">
         <span class="font-mono text-sm text-[var(--accent)]">// Tech Stack</span>
@@ -169,7 +209,7 @@
             id="projects-prev"
             type="button"
             aria-label="Previous project"
-            class="absolute left-2 top-1/2 z-10 -translate-y-1/2 w-10 h-10 rounded-full border border-[var(--border)] bg-white/90 backdrop-blur flex items-center justify-center transition-colors hover:border-[var(--accent)] hover:text-[var(--accent)]"
+            class="projects-nav-btn absolute left-2 top-1/2 z-10 -translate-y-1/2 w-10 h-10 rounded-full border border-[var(--border)] backdrop-blur flex items-center justify-center transition-colors hover:border-[var(--accent)] hover:text-[var(--accent)]"
           >
             <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
               <path d="M15 18l-6-6 6-6"/>
@@ -186,7 +226,7 @@
             id="projects-next"
             type="button"
             aria-label="Next project"
-            class="absolute right-2 top-1/2 z-10 -translate-y-1/2 w-10 h-10 rounded-full border border-[var(--border)] bg-white/90 backdrop-blur flex items-center justify-center transition-colors hover:border-[var(--accent)] hover:text-[var(--accent)]"
+            class="projects-nav-btn absolute right-2 top-1/2 z-10 -translate-y-1/2 w-10 h-10 rounded-full border border-[var(--border)] backdrop-blur flex items-center justify-center transition-colors hover:border-[var(--accent)] hover:text-[var(--accent)]"
           >
             <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
               <path d="M9 18l6-6-6-6"/>
@@ -240,7 +280,7 @@
   </section>
 
   <!-- Contact Section -->
-  <section id="contact" class="py-24 px-6 bg-[#f9fafb]">
+  <section id="contact" class="py-24 px-6 section-alt">
     <div class="max-w-3xl mx-auto">
       <div class="text-center mb-12 reveal">
         <span class="font-mono text-sm text-[var(--accent)]">// Contact</span>
@@ -711,6 +751,65 @@
       });
     }
 
+    function initThemeToggle() {
+      const root = document.documentElement;
+      const toggle = document.getElementById('theme-toggle');
+      const storageKey = 'preferred-theme';
+      if (!toggle) return;
+
+      const getSystemTheme = () => {
+        if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+          return 'dark';
+        }
+        return 'light';
+      };
+
+      const readSavedTheme = () => {
+        try {
+          const savedTheme = localStorage.getItem(storageKey);
+          return savedTheme === 'dark' || savedTheme === 'light' ? savedTheme : null;
+        } catch (error) {
+          return null;
+        }
+      };
+
+      const saveTheme = (nextTheme) => {
+        try {
+          localStorage.setItem(storageKey, nextTheme);
+        } catch (error) {
+          // Ignore storage errors (private browsing, blocked storage, etc).
+        }
+      };
+
+      const applyTheme = (theme) => {
+        const isDark = theme === 'dark';
+        root.setAttribute('data-theme', isDark ? 'dark' : 'light');
+        toggle.setAttribute('data-icon', isDark ? 'sun' : 'moon');
+        toggle.setAttribute('aria-label', isDark ? 'Activate light mode' : 'Activate dark mode');
+        toggle.setAttribute('aria-pressed', String(isDark));
+      };
+
+      const initialTheme = readSavedTheme() || root.getAttribute('data-theme') || getSystemTheme();
+      applyTheme(initialTheme);
+
+      toggle.addEventListener('click', () => {
+        const currentTheme = root.getAttribute('data-theme') === 'dark' ? 'dark' : 'light';
+        const nextTheme = currentTheme === 'dark' ? 'light' : 'dark';
+        applyTheme(nextTheme);
+        saveTheme(nextTheme);
+      });
+
+      if (window.matchMedia) {
+        const query = window.matchMedia('(prefers-color-scheme: dark)');
+        if (typeof query.addEventListener === 'function') {
+          query.addEventListener('change', (event) => {
+            if (readSavedTheme()) return;
+            applyTheme(event.matches ? 'dark' : 'light');
+          });
+        }
+      }
+    }
+
     // Smooth scroll
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
       anchor.addEventListener('click', function(e) {
@@ -997,6 +1096,7 @@
     renderProjects();
     renderGallery();
     ensureSvgViewBoxes();
+    initThemeToggle();
     initResponsiveMenu();
     observeElements();
     initFloatingAssistant();
